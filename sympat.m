@@ -1,4 +1,4 @@
-(*  <<sympat.mt;
+(*  <<sympat.m;
     for Mathematica in kernel mode with a wide screen
     generate symmetric node patterns for the ndim-simplex in ndim>=1 dimensions up to a degree pmax>=0; ndim and pmax should not be large
     author: W.A. Mulder
