@@ -92,12 +92,12 @@ Do[ jnode = NodeIndicesForClassBary[nnclass[[jclass]] ];
 ];
 
 
-(* KKreg is node pattern K for regular simplex *)
+(* Kreg is node pattern K for regular simplex *)
 Kreg = Array[{},pmax+1]; 
 For[pdeg=0,pdeg<=pmax,pdeg++,
   xpgen = IntegerPartitions[pdeg,ndim+1]; 
   xpgen = PadRight[xpgen,{Length[xpgen],ndim+1}]; (* padd with 0 to ndim+1 columns; *)
-  (* generating nodes: xgen=(1+Reverse@xpgen)/(p+ndim+1); *)(* Reverse@xpgen now contains generating nodes times pdeg*)
+  (* generating nodes: xgen=(1+Reverse@xpgen)/(pdeg+ndim+1); *)
   xpclasses = Map[Reverse, Map[Sort, Map[Tally, xpgen][[All,All,2]] ] ]; (* ReverseSort not in older version *)
   Kreg[[pdeg+1]] = Count[xpclasses,#]& /@ nnclass;
 ];
